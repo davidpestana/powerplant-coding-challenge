@@ -6,9 +6,12 @@ services:
         container_name: django-api
         build:
             context: ../../builds/python-django-rest-custom
-        command: python manage.py migrate
+        command: python manage.py runserver 0.0.0.0:8000
+        working_dir: /usr/src/app/api
+        ports:
+            - "8000:8000"
         restart: always
         environment: 
             DOCKER: 'true'
         volumes:
-            - ../../source/api:/usr/src/app
+            - ../../source/api:/usr/src/app/api
