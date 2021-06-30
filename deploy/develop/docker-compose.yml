@@ -1,0 +1,14 @@
+version: '2'
+
+services:      
+
+    django-api:
+        container_name: django-api
+        build:
+            context: ../../builds/python-django-rest-custom
+        command: python manage.py migrate
+        restart: always
+        environment: 
+            DOCKER: 'true'
+        volumes:
+            - ../../source/api:/usr/src/app
