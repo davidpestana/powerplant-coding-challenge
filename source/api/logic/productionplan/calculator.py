@@ -35,7 +35,7 @@ def get_productionplans(data):
                 data['rest'] = data['rest'] + ( p - pmin)
                 p = pmin
 
-        data['values'].append({'name':name, 'p': p,'price':price, 'pmax':pmax, 'pmin':pmin});
+        data['values'].append({'name':name, 'p': p});
         return data
 
 
